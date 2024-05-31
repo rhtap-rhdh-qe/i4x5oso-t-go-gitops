@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: i4x5oso-t-go-gitops
+  description: This is GitOps manifest for i4x5oso-t-go   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-name: i4x5oso-t-go
+    janus-idp.io/tekton: i4x5oso-t-go 
+    backstage.io/kubernetes-id: i4x5oso-t-go 
+    backstage.io/techdocs-ref: dir:. 
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:i4x5oso-t-go
